@@ -1,4 +1,1 @@
-flask
-Flask-Cors
-Flask-Pymongo
-pymongo
+nodejs
