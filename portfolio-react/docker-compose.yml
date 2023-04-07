@@ -1,17 +1,21 @@
+version: '3'
 services:
-  api:
+  react-app: 
     build: .
+    stdin_open: true
+    tty: true
     ports:
-      - 80:80
+      - 3000:3000
+    volumes:
+      - ./src:/app/src
     environment:
-       PORT : 80
-       MONGODB_URI : mongo://mongo-db:27017
-       DB_NAME : my_db
-       NAME: TrulyMittal
-
-  mongo_db: 
-    image: mongo:latest
-    restart: always
+      - REACT_APP_NAME=Khoa
+      - CHOKIDAR_USEPOLLING=true
+    # env_file:
+    #   - ./.env
+  mongo_db:
+    image: mongo_db:latest
+    
     
 
   

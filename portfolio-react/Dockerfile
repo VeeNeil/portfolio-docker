@@ -1,10 +1,11 @@
 FROM node:alpine 
 
-WORKDIR /code
+WORKDIR /app
 COPY package*.json . 
 # run command 
-RUN npm ci
+RUN npm install
 # copy from source to destination
-
+ENV REACT_APP_NAME=myName
 COPY  . .
-CMD ["npm", "start"]
+EXPOSE 3000
+CMD ["npm", "start", "--reload"]
