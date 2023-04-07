@@ -1,11 +1,10 @@
 FROM node:alpine 
 
 WORKDIR /code
-
-COPY ./requirements.txt ./
+COPY package*.json . 
 # run command 
-RUN npm install 
+RUN npm ci
 # copy from source to destination
-COPY . ./src
 
+COPY  . .
 CMD ["npm", "start"]

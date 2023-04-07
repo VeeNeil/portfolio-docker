@@ -1,0 +1,17 @@
+services:
+  api:
+    build: .
+    ports:
+      - 80:80
+    environment:
+       PORT : 80
+       MONGODB_URI : mongo://mongo-db:27017
+       DB_NAME : my_db
+       NAME: TrulyMittal
+
+  mongo_db: 
+    image: mongo:latest
+    restart: always
+    
+
+  
