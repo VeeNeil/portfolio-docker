@@ -1,14 +1,13 @@
 import './App.scss';
-import { Routes, Route } from 'react-router-dom';
-import Layout from './components/Layout';
-import Home from './components/Home';
+import { Sidebar} from './components/Sidebar';
+import { Banner} from './components/Banner';
+import "bootstrap/dist/css/bootstrap.min.css";
 function App() {
   return (
-    <>
-      <Routes>
-        <Route path="/" element= {<Layout />}/>
-      </Routes>
-    </>
+    <div className= "App">
+      <Sidebar/>
+      <Banner/>
+    </div>
   );
 }
 
